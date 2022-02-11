@@ -43,6 +43,13 @@ services:
       - users_db
     links:
       - users_db
+    environment:
+      - NODE_ENV=dev
+      - DB_HOST=users_db
+      - DB_PORT=5432
+      - DB_USER=root
+      - DB_PASSWORD=password
+      - DB_NAME=users
 
 networks:
   ms-poc:
