@@ -4,4 +4,4 @@ WORKDIR /app
 
 EXPOSE 5055
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
