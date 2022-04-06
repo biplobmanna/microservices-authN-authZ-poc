@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.hasMany(models.CustomPerission);
     }
   }
   User.init({
@@ -21,6 +22,11 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'User',
+    tableName: 'User',
+    freezeTableName: true,
+    defaultScope: {
+      attributes: { exclude: ['Password'] }
+    }
   });
   return User;
 };

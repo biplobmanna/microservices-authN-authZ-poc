@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.User, {as: 'UserID'});
+      this.belongsTo(models.Module, {as: 'ModuleID'});
     }
   }
   CustomPermission.init({
@@ -20,6 +22,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'CustomPermission',
+    tableName: 'CustomPermission',
+    freezeTableName: true,
   });
   return CustomPermission;
 };

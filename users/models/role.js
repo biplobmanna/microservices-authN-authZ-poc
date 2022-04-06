@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.hasMany(models.Permission);
     }
   }
   Role.init({
@@ -19,6 +20,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Role',
+    tableName: 'Role',
+    freezeTableName: true,
   });
   return Role;
 };

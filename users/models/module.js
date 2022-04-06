@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.hasMany(models.Permission);
+      this.hasMany(models.CustomPermission);
     }
   }
   Module.init({
@@ -19,6 +21,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Module',
+    tableName: 'Module',
+    freezeTableName: true,
   });
   return Module;
 };
