@@ -10,7 +10,9 @@
     "db:create": "sequelize db:create",
     "db:drop": "sequelize db:drop",
     "db:migrate": "sequelize db:migrate",
-    "model:generate": "sequelize model:generate --name"
+    "model:generate": "sequelize model:generate --name",
+    "seed:all": "sequelize db:seed:all",
+    "seed:undo": "sequelize db:seed:undo"
   },
   "keywords": [
     "users",
