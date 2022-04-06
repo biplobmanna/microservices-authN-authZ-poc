@@ -9,10 +9,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       UserID: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "User",
+          key: "id"
+        }
       },
       ModuleID: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Module",
+          key: "id"
+        }
       },
       HexPermission: {
         type: Sequelize.STRING
